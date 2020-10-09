@@ -2,7 +2,7 @@
 
 ## 脚本
 
-```shell
+```
 ]# vim /scripts/nginx_install.sh
 #!/usr/bin/env bash
 # Author: wanwz
