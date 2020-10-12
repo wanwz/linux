@@ -13,13 +13,18 @@ def is_response(url):
     except requests.RequestException:
         return None
 
-...
+def show_info(soup):
+    list = soup.find(class_='Box-body px-5 pb-5').find_all('li')
+    for item in list:
+        item_name = item.find('a').string
+        item_links = item.find('a').get('href')
+        print('<<' + item_name + '>> ' item_links)
 
 def main():
-    url = 'http://xxx' + str(var)
+    url = 'https://github.com/wistbean/learn_python3_spider'
     html = is_response(url)
     soup = BeautifulSoup(html, 'lxml')
-    pass
+    show_info(soup)
 
 if __name__ == '__main__':
     main()
