@@ -28,3 +28,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+## 扩展
+1.BeautifulSoup使用string和text获取标签文本的区别
+2.BeautifulSoup使用find和find_all的区别
+3.BeautifulSoup使用get()获取标签内flag的文本
+4.BeautifulSoup使用lxml，需安装模块lxml
