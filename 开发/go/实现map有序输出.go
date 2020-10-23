@@ -6,12 +6,12 @@ import (
 )
 
 func main() {
-    map1 := make(map[int]string, 5)
-    map1[1] = "www.topgoer.com"
-    map1[2] = "rpc.topgoer.com"
-    map1[5] = "ceshi"
-    map1[3] = "xiaohong"
-    map1[4] = "xiaohuang"
+    map1 := make(map[int]int, 5)
+    map1[1] = 1
+    map1[2] = 2
+    map1[5] = 5
+    map1[3] = 3
+    map1[4] = 4
     sli := []int{}
     for k, _ := range map1 {
         sli = append(sli, k)
