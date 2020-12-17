@@ -1,6 +1,9 @@
 ## 问题现象
 root总是收到邮件提醒如下内容：
-"Subject: Cron <root@manager> /usr/lib/sa/sa1 1 1
+```shell
+]# tail /var/spool/mail/root
+...
+Subject: Cron <root@manager> /usr/lib/sa/sa1 1 1
 Content-Type: text/plain; charset=UTF-8
 X-Cron-Env: <SHELL=/bin/sh>
 X-Cron-Env: <HOME=/root>
@@ -8,7 +11,8 @@ X-Cron-Env: <PATH=/usr/bin:/bin>
 X-Cron-Env: <LOGNAME=root>
 X-Cron-Env: <USER=root>
 
-Cannot open /var/log/sa/sa20: No such file or directory"
+Cannot open /var/log/sa/sa20: No such file or directory
+```
 
 ## 解决办法
 1.创建sa目录
