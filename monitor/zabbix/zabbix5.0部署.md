@@ -44,3 +44,12 @@ php_value[date.timezone] = Asia/Shanghai
 #### web配置
 1. 登录http://server_ip_or_name/zabbix
 2. 默认用户名：Admin/zabbix
+
+#### 添加邮件监控
+1. 配置 --> 动作
+2. 创建动作
+3. 动作
+  1. 名称：服务器异常通知 --> 添加
+  2. 操作：操作下 --> 添加 --> 用户群组（Zabbix administrators） --> 仅送到(admin) --> Custom message(勾上) --> 主题（恢复{TRIGGER.STATUS}, 服务器:{HOSTNAME1}: {TRIGGER.NAME}已恢复!） --> 消息（告警主机:{HOSTNAME1} 告警时间:{EVENT.DATE} {EVENT.TIME} 告警等级:{TRIGGER.SEVERITY} 告警信息: {TRIGGER.NAME} 告警项目:{TRIGGER.KEY1} 问题详情:{ITEM.NAME}:{ITEM.VALUE} 当前状态:{TRIGGER.STATUS}:{ITEM.VALUE1} 事件ID:{EVENT.ID}）--> Update
+  3. 操作：恢复操作下 --> 添加 --> 用户群组（Zabbix administrators） --> 仅送到(admin) --> Custom message(勾上) --> 主题（恢复{TRIGGER.STATUS}, 服务器:{HOSTNAME1}: {TRIGGER.NAME}已恢复!）--> 消息（告警主机:{HOSTNAME1} 告警时间:{EVENT.DATE} {EVENT.TIME} 告警等级:{TRIGGER.SEVERITY} 告警信息: {TRIGGER.NAME} 告警项目:{TRIGGER.KEY1} 问题详情:{ITEM.NAME}:{ITEM.VALUE} 当前状态:{TRIGGER.STATUS}:{ITEM.VALUE1} 事件ID:{EVENT.ID}） --> Update
+  4. 更新
