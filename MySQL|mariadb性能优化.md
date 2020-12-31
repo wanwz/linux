@@ -59,6 +59,7 @@
     ```
 ## 设置 MySQL 的最大连接数
 max_connections 指令告诉你当前你的服务器允许多少并发连接
+
     ```mysql
     MariaDB [(none)]> show variables like '%thread_cache_size%'; 
     +-------------------+-------+
@@ -78,6 +79,7 @@ max_connections 指令告诉你当前你的服务器允许多少并发连接
     +-------------------+-------+
     1 row in set (0.00 sec)
     ```
+
 ## 配置 MySQL 的线程缓存数量
 
 - thread_cache_size 指令用来设置你服务器缓存的线程数量
