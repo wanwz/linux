@@ -49,13 +49,13 @@
 
 ## 启用MySQL慢查询日志
 记录慢查询可以帮助你定位数据库中的问题并帮助你调试
+    
     ```shell
     ]# vim /etc/my.cnf
     ...
     slow-query-log = 1 //启用慢查询
     slow-query-log-file = /var/log/mariadb/mysql-slow.log //日志保存位置
     long-query-time = 1 //查询超过多少秒才记录，默认10秒，修改为1秒
-    
     ```
 ## 设置 MySQL 的最大连接数
 max_connections 指令告诉你当前你的服务器允许多少并发连接
@@ -79,6 +79,7 @@ max_connections 指令告诉你当前你的服务器允许多少并发连接
     1 row in set (0.00 sec)
     ```
 ## 配置 MySQL 的线程缓存数量
+
 - thread_cache_size 指令用来设置你服务器缓存的线程数量
 - 当客户端断开连接时，如果当前线程数小于 thread_cache_size，它的线程将被放入缓存中
 - 下一个请求通过使用缓存池中的线程来完成
