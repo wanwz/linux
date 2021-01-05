@@ -1,0 +1,12 @@
+## linux 终端报Message from syslogd
+### 问题描述
+    1. 终端一直报"Message from syslogd ..."
+
+### 解决办法
+```shell
+]# vim /etc/rsyslog.conf
+...
+# Everybody gets emergency messages
+#*.emerg  注释此行
+]# systemctl restart rsyslog #低于7的系统使用service restart rsyslog | /etc/init.d/syslog restart
+```
