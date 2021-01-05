@@ -15,3 +15,8 @@
 |    delay    |          从本地机发送同步要求到ntp服务器的往返时间           |
 |   offset    | 主机通过NTP时钟同步与所同步时间源的时间偏移量，单位为毫秒，offset越接近于0，主机和ntp服务器的时间越接近 |
 |   jitter    | 统计了在特定个连续的连接数里offset的分布情况。简单地说这个数值的绝对值越小，主机的时间就越精确 |
+
+2. ntpq -p 报错提示"timed out, nothing received"
+    1. 重启ntpd服务后，立即执行ntpq -p会报上述错误，等待5分钟后再次执行即可
+    2. 参考[ntpq_timed_out_nothing_received.md]: https://github.com/huataihuang/cloud-atlas-draft/blob/master/service/ntp/ntpq_timed_out_nothing_received.md
+  
