@@ -34,4 +34,24 @@
     olddir directory        # 转储后的日志文件放入指定的目录，必须和当前日志文件在同一个文件系统
     ```
 ### 举例
-    1. 
+    1. /var/log/messages
+    2. 每周切割一次
+    3. 保留30份，格式*.20200101
+    4. 压缩保存在/var/log/msgold目录下
+    5. 新文件权限0600 root root
+        ```shell
+        ]# vim /etc/logrotate.d/message
+        /var/log/messages {
+            weekly
+            rotate 30
+            create 0600 root root
+            compress
+            dateext
+            dateformat -%Y%m%d%s #后面这个秒是防止当天再次切割时覆盖原先的文件
+            olddir /var/log/msgold/     #需预先创建目录，否则报错
+            postrotate
+                /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
+            endscript
+        }
+        ]# logrotate -f /etc/logrotate.d/message # 强制执行
+        ```
