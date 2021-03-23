@@ -27,3 +27,7 @@
 ### 使用scrt验证登陆
   1. 连接会话选项把"Keyboard Interactive"放到最前面
   2. ![photo](https://github.com/wanwz/linux/blob/main/image/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210323150843.png)
+
+### 备注
+  1. 将/etc/pam.d/sshd中google认证注释后，即可取消二次验证。
+  2. nullok 可不加
